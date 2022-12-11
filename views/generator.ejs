@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<title></title>
+<script type="text/javascript">
+	function myFunction()
+	{
+		displayReturnType();	
+	}
+</script>
+<script src='js/jquery.js'></script>
+<script src='js/script.js'></script>
+</head>
+<body onload="myFunction()">
+
+<center><h1>Driver Generator For C++ Code</h1></center>
+<br>
+
+	<table style="width:100%;">
+			
+		<tr>
+			
+			<td>
+				Function Name
+			</td>
+
+			<td>
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Function name" aria-describedby="basic-addon1" name="fname" onchange="functionNameChange(this)">
+				</div>
+			</td>
+
+		</tr>
+
+		<tr>
+			
+			<td>
+				Return Type
+			</td>
+
+			<td>
+				<div class="input-group mb-3" id="returnType">
+				
+					
+				</div>
+			</td>
+			
+		</tr>
+
+			
+		<tr>
+			<td>
+				Comment to be displayed
+			</td>
+
+			<td>
+				<div class="input-group">
+					<textarea class="form-control" aria-label="With textarea" rows="5" cols="30" onchange="commentChange(this)"></textarea>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+			
+				<input type="checkbox"  name="multipleTestCase" value="1" onclick="multipleTestCaseChange(this)"> Has multiple testcases in a single file
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				Function Parameters
+			</td>
+		</tr>
+	</table>
+
+
+	<!-- Here we will append the parameter -->
+	<div id="param" style="width:100%;">
+		
+	</div>
+
+
+	<table>
+		<tr>
+			<td colspan="2">
+				<button type="button" class="btn btn-secondary" onclick="addParameter()">
+				+ Add Parameters</button>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<br>
+				<button type="button" class="btn btn-primary" onclick="generator()">Generate Code</button>
+			</td>
+		</tr>
+	</table>
+
+
+	<div class="input-group">
+		<textarea class="form-control" aria-label="With textarea" rows="20" cols="185" id="editor"></textarea>
+	</div>
+	<a href="#" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Github Source Code</a>
+</body>
+</html>
